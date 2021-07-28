@@ -1,0 +1,1 @@
+# shared_variables_across_templates
