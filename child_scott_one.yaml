@@ -10,8 +10,15 @@ stages:
         echo "This is job Foo."
         echo "##vso[task.setvariable variable=doThing;isOutput=true]Yes" #The variable doThing is set to true
 
-        echo
         echo "here is big_var_01  -->$(big_var_01)<-- "
+
+        local_var_01=$(big_var_01)
+
+        echo
+        echo "here is local_var_01  -->$local_var_01<-- "
+        echo
+        echo "length of local_var_01 is ${#local_var_01}"
+        echo
 
         echo "##vso[task.setvariable variable=remote_password;isOutput=true]$(big_var_01)"
 
