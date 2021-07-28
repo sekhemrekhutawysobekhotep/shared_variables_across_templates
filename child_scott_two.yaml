@@ -1,0 +1,25 @@
+
+
+
+# Release Stages
+stages:
+- stage: B
+  dependsOn: A
+  jobs:
+  - job: JB
+    # condition: eq(stageDependencies.A.JA.outputs['DetermineResult.doThing'], 'Yes') #map doThing and ***REMOVED*** true
+    variables:
+      varFromStageA: $[ stageDependencies.A.JA.outputs['DetermineResult.doThing'] ]
+      remote_password: $[ stageDependencies.A.JA.outputs['DetermineResult.remote_password'] ]
+
+
+
+    steps:
+    - bash: echo "Hello world stage B first job"
+    - script: echo "now in job JB about to show variable varFromStageA which has value " $(varFromStageA)
+        echo
+        echo "OK here is remote_password -->$(remote_password)<-- "
+        echo
+
+
+

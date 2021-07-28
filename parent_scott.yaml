@@ -1,0 +1,28 @@
+
+variables:
+- name: big_var_01
+  value: ${{ parameters.big_var_01 }}
+
+
+
+parameters:
+  - name: big_var_01
+    displayName: "this var wants to get written to then read by templates"
+    type: string
+    default: '3q4w#V$X3q4w#V$X'
+
+
+# CI Triggers
+trigger:
+  branches:
+    exclude:
+      - '*'
+
+
+# Release Stages
+stages:
+
+- template: child_scott_one.yaml
+
+- template: child_scott_two.yaml
+
