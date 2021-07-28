@@ -1,0 +1,23 @@
+
+
+# Release Stages
+stages:
+- stage: A
+  jobs:
+  - job: JA
+    steps:
+    - script: |
+        echo "This is job Foo."
+        echo "##vso[task.setvariable variable=doThing;isOutput=true]Yes" #The variable doThing is set to true
+
+        echo
+        echo "here is big_var_01  -->$(big_var_01)<-- "
+
+        echo "##vso[task.setvariable variable=remote_password;isOutput=true]$(big_var_01)"
+
+      name: DetermineResult
+    - script: echo "inside job JA script echovar now showing value of variable DetermineResult.doThing which is " $(DetermineResult.doThing)
+      name: echovar
+
+
+
