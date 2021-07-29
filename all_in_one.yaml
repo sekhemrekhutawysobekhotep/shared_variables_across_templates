@@ -24,9 +24,9 @@ pool:
 
 # Release Stages
 stages:
-- stage: A
+- stage: first_one
   jobs:
-  - job: JA
+  - job: job_001
     steps:
     - script: |
         echo "This is job Foo."
@@ -35,6 +35,7 @@ stages:
         echo "here is big_var_01  -->$(big_var_01)<-- "
 
         local_var_01=$(big_var_01)
+        local_var_02="$(big_var_01)"
 
         echo
         echo "here is local_var_01  -->$local_var_01<-- "
@@ -42,8 +43,19 @@ stages:
         echo "length of local_var_01 is ${#local_var_01}"
         echo
 
+
+        echo
+        echo "here is local_var_02  -->$local_var_02<-- "
+        echo
+        echo "length of local_var_02 is ${#local_var_02}"
+        echo
+
         echo "##vso[task.setvariable variable=remote_password;isOutput=true]$(big_var_01)"
 
-      name: DetermineResult
-    - script: echo "inside job JA script echovar now showing value of variable DetermineResult.doThing which is " $(DetermineResult.doThing)
+      name: script_foo_one
+      
+    - script: |
+        echo "inside job job_001 script echovar now showing value of variable script_foo_one.doThing which is " $(script_foo_one.doThing)
+        echo
+        echo "in script echovar here is big_var_01 " $(big_var_01)
       name: echovar
