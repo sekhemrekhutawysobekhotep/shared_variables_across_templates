@@ -50,10 +50,12 @@ stages:
         echo "length of local_var_02 is ${#local_var_02}"
         echo
 
+        echo "length of  dollar big_var_01  is ${#$(big_var_01)}"
+
         echo "##vso[task.setvariable variable=remote_password;isOutput=true]$(big_var_01)"
 
       name: script_foo_one
-      
+
     - script: |
         echo "inside job job_001 script echovar now showing value of variable script_foo_one.doThing which is " $(script_foo_one.doThing)
         echo
