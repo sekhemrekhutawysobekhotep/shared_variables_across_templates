@@ -1,0 +1,49 @@
+
+variables:
+- name: big_var_01
+  value: ${{ parameters.big_var_01 }}
+
+
+parameters:
+  - name: big_var_01
+    displayName: "this var wants to get written to then read by templates"
+    type: string
+    default: '3q4w#V$X3q4w#V$X'
+
+
+# CI Triggers
+trigger:
+  branches:
+    exclude:
+      - '*'
+
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+
+# Release Stages
+stages:
+- stage: A
+  jobs:
+  - job: JA
+    steps:
+    - script: |
+        echo "This is job Foo."
+        echo "##vso[task.setvariable variable=doThing;isOutput=true]Yes" #The variable doThing is set to true
+
+        echo "here is big_var_01  -->$(big_var_01)<-- "
+
+        local_var_01=$(big_var_01)
+
+        echo
+        echo "here is local_var_01  -->$local_var_01<-- "
+        echo
+        echo "length of local_var_01 is ${#local_var_01}"
+        echo
+
+        echo "##vso[task.setvariable variable=remote_password;isOutput=true]$(big_var_01)"
+
+      name: DetermineResult
+    - script: echo "inside job JA script echovar now showing value of variable DetermineResult.doThing which is " $(DetermineResult.doThing)
+      name: echovar
