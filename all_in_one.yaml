@@ -36,6 +36,7 @@ stages:
 
         local_var_01=$(big_var_01)
         local_var_02="$(big_var_01)"
+        local_var_03='$(big_var_01)'
 
         echo
         echo "here is local_var_01  -->$local_var_01<-- "
@@ -43,13 +44,17 @@ stages:
         echo "length of local_var_01 is ${#local_var_01}"
         echo
 
-
         echo
         echo "here is local_var_02  -->$local_var_02<-- "
         echo
         echo "length of local_var_02 is ${#local_var_02}"
         echo
 
+        echo
+        echo "here is local_var_03  -->$local_var_03<-- "
+        echo
+        echo "length of local_var_03 is ${#local_var_03}"
+        echo
 
         echo "##vso[task.setvariable variable=remote_password;isOutput=true]$(big_var_01)"
 
