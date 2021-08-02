@@ -25,6 +25,6 @@ trigger:
 
 # Release Stages
 stages:
-- template: cool_calc.yaml@cool_templates
+- template: cool_calc_template_inline.yaml@cool_templates
 
 
