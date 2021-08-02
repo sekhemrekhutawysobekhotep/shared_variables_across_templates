@@ -11,6 +11,8 @@ resources:
     # name: sekhemrekhutawysobekhotep/pipeline-templates
     name: 'https://github.com/sekhemrekhutawysobekhotep/pipeline-templates'
     ref: main
+    endpoint: sekhemrekhutawysobekhotep
+
 
 
 # CI Triggers
