@@ -18,7 +18,6 @@ trigger:
     exclude:
       - '*'
 
-pool: $(pool)
 
 # Release Stages
 stages:
