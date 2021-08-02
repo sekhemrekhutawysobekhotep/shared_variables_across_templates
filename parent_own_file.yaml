@@ -1,0 +1,31 @@
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+
+
+resources:
+  repositories:
+  - repository: cool_templates
+    type: github  #     type:  use these flavors git = Azure DevOps /    github = GitHub
+    # name: sekhemrekhutawysobekhotep/pipeline-templates
+    # name: https://github.com/sekhemrekhutawysobekhotep/pipeline-templates
+    name: sekhemrekhutawysobekhotep/pipeline-templates
+    ref: main
+    endpoint: sekhemrekhutawysobekhotep
+
+
+
+# CI Triggers
+trigger:
+  branches:
+    exclude:
+      - '*'
+
+
+# Release Stages
+stages:
+# - template: cool_calc_template_inline.yaml@cool_templates
+- template: do_peach.yaml@cool_templates
+
+
