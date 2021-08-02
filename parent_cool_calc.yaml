@@ -9,7 +9,8 @@ resources:
   - repository: cool_templates
     type: github  #     type:  use these flavors git = Azure DevOps /    github = GitHub
     # name: sekhemrekhutawysobekhotep/pipeline-templates
-    name: 'https://github.com/sekhemrekhutawysobekhotep/pipeline-templates'
+    # name: https://github.com/sekhemrekhutawysobekhotep/pipeline-templates
+    name: sekhemrekhutawysobekhotep/pipeline-templates
     ref: main
     endpoint: sekhemrekhutawysobekhotep
 
