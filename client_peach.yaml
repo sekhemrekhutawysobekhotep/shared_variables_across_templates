@@ -1,0 +1,27 @@
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+
+
+resources:
+  repositories:
+  - repository: cool_templates
+    type: git
+    name: sekhemrekhutawysobekhotep/pipeline-templates
+    ref: master
+
+
+# CI Triggers
+trigger:
+  branches:
+    exclude:
+      - '*'
+
+pool: $(pool)
+
+# Release Stages
+stages:
+- template: do_peach.yaml@cool_templates
+
+
