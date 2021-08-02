@@ -9,7 +9,7 @@ resources:
   - repository: cool_templates
     type: git
     name: sekhemrekhutawysobekhotep/pipeline-templates
-    ref: master
+    ref: main
 
 
 # CI Triggers
