@@ -7,7 +7,6 @@ stages:
   dependsOn: A
   jobs:
   - job: JB
-    # condition: eq(stageDependencies.A.JA.outputs['DetermineResult.doThing'], 'Yes') #map doThing and check if true
     # condition: eq(stageDependencies.A.JA.outputs['DetermineResult.doThing'], 'Yes') #map doThing and newfromKVsoOK  true
     variables:
       varFromStageA: $[ stageDependencies.A.JA.outputs['DetermineResult.doThing'] ]
