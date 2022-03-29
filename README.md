@@ -2,12 +2,7 @@
 
 testing mary had goodKVvalue here 
 
-and through ***REMOVED*** grandmothers house we go
-
-
-its fooKVbar   still sunny
-
-
+and through goodKVtoo   grandmothers house we go
 
 
 its fooKVbar   still sunny
